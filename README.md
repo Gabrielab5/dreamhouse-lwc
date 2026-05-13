@@ -3,21 +3,17 @@
 [![CI Workflow](https://github.com/trailheadapps/dreamhouse-lwc/workflows/CI/badge.svg)](https://github.com/trailheadapps/dreamhouse-lwc/actions?query=workflow%3ACI) [![Packaging Workflow](https://github.com/trailheadapps/dreamhouse-lwc/workflows/Packaging/badge.svg)](https://github.com/trailheadapps/dreamhouse-lwc/actions?query=workflow%3APackaging) [![codecov](https://codecov.io/gh/trailheadapps/dreamhouse-lwc/branch/main/graph/badge.svg)](https://codecov.io/gh/trailheadapps/dreamhouse-lwc)
 
 > [!IMPORTANT]
-> This is the modern Lightning Web Components version of the Dreamhouse sample application. If you are looking for the legacy Aura version, click [here](https://github.com/trailheadapps/dreamhouse-sfdx).
+> This is the modern Lightning Web Components version of the Dreamhouse sample application. If you are looking for the [legacy Aura version](https://github.com/trailheadapps/dreamhouse-sfdx), it is available on GitHub.
 
 ![dreamhouse-logo](dreamhouse-logo.png)
 
 Dreamhouse is a sample application that demonstrates the unique value proposition of the Salesforce platform for building Employee Productivity and Customer Engagement apps.
 
-<div>
-    <img src="https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70,w_50/learn/projects/quick-start-dreamhouse-sample-app/17d9a9454cb84973b3adfe25e9f12b01_badge.png" align="left" alt="Trailhead Badge"/>
-    Learn more about this app by completing the <a href="https://trailhead.salesforce.com/en/content/learn/projects/quick-start-dreamhouse-sample-app">Quick Start: Explore the Dreamhouse Sample App</a> Trailhead project or by watching this <a href="https://www.youtube.com/watch?v=UvUDi8acq2w&list=PLgIMQe2PKPSJcuCwM61dEc4jFG_jHqV2t&index=4">short presentation video</a>.
-    <br/>
-    <br/>
-    <br/>
-</div>
+[![Trailhead Badge](https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70,w_50/learn/projects/quick-start-dreamhouse-sample-app/17d9a9454cb84973b3adfe25e9f12b01_badge.png)](https://trailhead.salesforce.com/en/content/learn/projects/quick-start-dreamhouse-sample-app)
 
-> This sample application is designed to run on Salesforce Platform. If you want to experience Lightning Web Components on any platform, please visit https://lwc.dev, and try out our Lightning Web Components sample application [LWC Recipes OSS](https://github.com/trailheadapps/lwc-recipes-oss).
+Learn more about this app by completing the [Quick Start: Explore the Dreamhouse Sample App](https://trailhead.salesforce.com/en/content/learn/projects/quick-start-dreamhouse-sample-app) Trailhead project or by watching this [short presentation video](https://www.youtube.com/watch?v=UvUDi8acq2w&list=PLgIMQe2PKPSJcuCwM61dEc4jFG_jHqV2t&index=4).
+
+> This sample application is designed to run on Salesforce Platform. If you want to experience Lightning Web Components on any platform, please visit <https://lwc.dev>, and try out our Lightning Web Components sample application [LWC Recipes OSS](https://github.com/trailheadapps/lwc-recipes-oss).
 
 ## Table of contents
 
@@ -43,32 +39,32 @@ Dreamhouse is a sample application that demonstrates the unique value propositio
 
 1. If you haven't already done so, authorize your hub org and provide it with an alias (**myhuborg** in the command below):
 
-    ```
+    ```bash
     sf org login web -d -a myhuborg
     ```
 
 1. Clone this repository:
 
-    ```
+    ```bash
     git clone https://github.com/trailheadapps/dreamhouse-lwc
     cd dreamhouse-lwc
     ```
 
 1. Create a scratch org and provide it with an alias (**dreamhouse** in the command below):
 
-    ```
+    ```bash
     sf org create scratch -d -f config/project-scratch-def.json -a dreamhouse
     ```
 
 1. Push the app to your scratch org:
 
-    ```
+    ```bash
     sf project deploy start
     ```
 
 1. Assign the **dreamhouse** permission set to the default user:
 
-    ```
+    ```bash
     sf org assign permset -n dreamhouse
     ```
 
@@ -76,19 +72,19 @@ Dreamhouse is a sample application that demonstrates the unique value propositio
 
     > Note: this will enable your user to use In-App Guidance Walkthroughs, allowing you to be taken through a guided tour of the sample app. The Walkthroughs permission set gets auto-created with In-App guidance activation.
 
-    ```
+    ```bash
     sf org assign permset -n Walkthroughs
     ```
 
 1. Import sample data:
 
-    ```
+    ```bash
     sf data tree import -p data/sample-data-plan.json
     ```
 
 1. Open the scratch org:
 
-    ```
+    ```bash
     sf org open
     ```
 
@@ -98,7 +94,7 @@ Dreamhouse is a sample application that demonstrates the unique value propositio
 
 ## Installing Dreamhouse using an Unlocked Package
 
-Follow this set of instructions if you want to deploy the app to a more permanent environment than a Scratch org or if you don't want to install the local developement tools. You can use a non source-tracked orgs such as a free [Developer Edition Org](https://developer.salesforce.com/signup) or a [Trailhead Playground](https://trailhead.salesforce.com/).
+Follow this set of instructions if you want to deploy the app to a more permanent environment than a Scratch org or if you don't want to install the local development tools. You can use a non source-tracked orgs such as a free [Developer Edition Org](https://developer.salesforce.com/signup) or a [Trailhead Playground](https://trailhead.salesforce.com/).
 
 Make sure to start from a brand-new environment to avoid conflicts with previous work you may have done.
 
@@ -131,38 +127,38 @@ Make sure to start from a brand-new environment to avoid conflicts with previous
 
 1. Clone this repository:
 
-    ```
+    ```bash
     git clone https://github.com/trailheadapps/dreamhouse-lwc
     cd dreamhouse-lwc
     ```
 
 1. Authorize your Trailhead Playground or Developer org and provide it with an alias (**mydevorg** in the command below):
 
-    ```
+    ```bash
     sf org login web -s -a mydevorg
     ```
 
 1. Run this command in a terminal to deploy the app.
 
-    ```
+    ```bash
     sf project deploy start -d force-app
     ```
 
 1. Assign the `dreamhouse` permission set to the default user.
 
-    ```
+    ```bash
     sf org assign permset -n dreamhouse
     ```
 
 1. Import some sample data.
 
-    ```
+    ```bash
     sf data tree import -p ./data/sample-data-plan.json
     ```
 
 1. If your org isn't already open, open it now:
 
-    ```
+    ```bash
     sf org open -o mydevorg
     ```
 
@@ -200,7 +196,7 @@ To set up the formatting and linting pre-commit hook:
 
 Prettier and ESLint will now run automatically every time you commit changes. The commit will fail if linting errors are detected. You can also run the formatting and linting from the command line using the following commands (check out [package.json](./package.json) for the full list):
 
-```
+```bash
 npm run lint
 npm run prettier
 ```
